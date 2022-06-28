@@ -12,6 +12,10 @@
   --green: #78866b;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
@@ -414,7 +418,6 @@ header {
 }
 
 .years.current {
-  min-width: 85px;
   font-size: 20px;
   color: #78866b;
 }
@@ -623,6 +626,12 @@ textarea {
   }
 }
 
+@media (max-width: 1150px) {
+  .about-me__img img {
+    width: 90%;
+  }
+}
+
 @media (max-width: 900px) {
   header {
     padding: 20px 40px;
@@ -707,7 +716,7 @@ textarea {
   .subtitle-text,
   .title-text span,
   .goals-text {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .hamburger-menu {
@@ -794,6 +803,7 @@ textarea {
 
   .about-me__img img {
     width: 90%;
+    margin-bottom: 25px;
   }
 
   .card {
@@ -809,12 +819,12 @@ textarea {
   }
 
   .years {
-    font-size: 20px;
+    font-size: 26px;
   }
 
   .years.current {
     min-width: unset;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   #contacts .section-container {
