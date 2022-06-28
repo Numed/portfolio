@@ -544,6 +544,16 @@ textarea {
   border-bottom: 2px solid var(--green);
 }
 
+.user-name__input.shake,
+.user-email__input.shake,
+.user-subject.shake,
+.user-textarea.shake,
+.user-name__input.shake ~ label,
+.user-email__input.shake ~ label,
+.user-subject.shake ~ label {
+  animation: shake .3s linear;
+}
+
 .btn-submit {
   padding: 7px 25px;
   margin: 0 auto;
