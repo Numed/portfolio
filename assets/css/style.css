@@ -31,6 +31,9 @@ button {
 }
 
 textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.2px;
   resize: vertical;
 }
 
