@@ -6,10 +6,11 @@ let hamburgMenu = document.querySelector(".hamburger-menu"),
   userEmail = document.querySelector(".user-email__input"),
   userSubject = document.querySelector(".user-subject"),
   userMessage = document.querySelector(".user-textarea"),
-  btnSubmit = document.querySelector(".btn-submit");
+  btnSubmit = document.querySelector(".btn-submit"),
+  btnIcon = document.querySelector(".btn-menu i"),
+  navLinks = document.querySelectorAll(".nav-link a");
 
-hamburgMenu.onclick = function () {
-  let btnIcon = document.querySelector(".btn-menu i");
+hamburgMenu.onclick = function (event) {
   hamburgMenu.classList.toggle("active");
   if (btnIcon.classList.contains("fa-times")) {
     btnIcon.classList.replace("fa-times", "fa-bars");
@@ -18,15 +19,22 @@ hamburgMenu.onclick = function () {
   }
 };
 
-//TODO: Треба доробити
+for (const navLink of navLinks) {
+  navLink.addEventListener("click", (e) => {
+    if (hamburgMenu.classList.contains("active") && e.target == navLink) {
+      hamburgMenu.classList.remove("active");
+      btnIcon.classList.replace("fa-times", "fa-bars");
+    }
+  });
+}
+
 userEmail.oninput = function () {
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  //   if (!userEmail.value.match(pattern)) {
-  //     errorMsg[0].textContent = "Enter a valid email";
-  //     errorMsg[0].style.display = "inline";
-  //   } else {
-  //     errorMsg[0].style.display = "none";
-  //   }
+  if (!userEmail.value.match(pattern)) {
+    userEmail.classList.add("shake");
+  } else {
+    errorMsg[0].style.display = "none";
+  }
 
   if (userEmail.value != "") {
     contactsLabel[1].style.transform = "translate(0, -5px)";
