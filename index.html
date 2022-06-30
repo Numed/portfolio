@@ -247,7 +247,9 @@
                 <h2 class="section-title">Contacts</h2>
                 <h3 class="section-suptitle">Have an idea or suggestion?</h3>
                 <div class="section-container">
-                    <form class="contacts-form" action="" method="post">
+                    <form class="contacts-form" action="https://formsubmit.co/ruschinets09@gmail.com" method="post">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://numed.github.io/portfolio/">
                         <div class="main-info">
                             <div class="name__input">
                                 <input class="user-name__input" id="name" type="text" name="name">
@@ -255,11 +257,12 @@
                             </div>
                             <div class="email__input">
                                 <input class="user-email__input" id="email" type="email" name="email">
+                                <span class="email__input-error"></span>
                                 <label for="email">Email Address</label>
                             </div>
                         </div>
                         <div class="subject__input">
-                            <input class="user-subject" type="text" id="subject">
+                            <input class="user-subject" type="text" id="subject" name="_subject">
                             <label for="subject">Subject</label>
                         </div>
                         <div class="textarea__input">

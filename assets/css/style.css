@@ -557,6 +557,18 @@ textarea {
   animation: shake .3s linear;
 }
 
+.email__input {
+  position: relative;
+}
+
+.email__input-error {
+  position: absolute;
+  top: 50px;
+  display: none;
+  font-size: 14px;
+  color: #ff0000;
+}
+
 .btn-submit {
   padding: 7px 25px;
   margin: 0 auto;

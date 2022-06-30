@@ -8,6 +8,7 @@ let hamburgMenu = document.querySelector(".hamburger-menu"),
   userMessage = document.querySelector(".user-textarea"),
   btnSubmit = document.querySelector(".btn-submit"),
   btnIcon = document.querySelector(".btn-menu i"),
+  errorMessage = document.querySelector(".email__input-error"),
   navLinks = document.querySelectorAll(".nav-link a");
 
 hamburgMenu.onclick = function (event) {
@@ -31,9 +32,10 @@ for (const navLink of navLinks) {
 userEmail.oninput = function () {
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   if (!userEmail.value.match(pattern)) {
-    userEmail.classList.add("shake");
+    errorMessage.style.display = "inline";
+    errorMessage.textContent = "Invalid email";
   } else {
-    errorMsg[0].style.display = "none";
+    errorMessage.style.display = "none";
   }
 
   if (userEmail.value != "") {
@@ -59,23 +61,31 @@ userSubject.oninput = () => {
   }
 };
 
-btnSubmit.onclick = function () {
-  if (userName == "") {
+btnSubmit.onsubmit = function (e) {
+  e.preventDefault();
+  if (
+    userName.value == "" &&
+    userEmail.value == "" &&
+    userSubject.value == "" &&
+    userMessage.value == ""
+  ) {
     userName.classList.add("shake");
-  } else if (userEmail == "") {
     userEmail.classList.add("shake");
-  } else if (userSubject == "") {
     userSubject.classList.add("shake");
-  } else if (userMessage == "") {
     userMessage.classList.add("shake");
-  } else {
-    let xhttp = new XMLHttpRequest();
+  } else if (userName.value == "") {
+    userName.classList.add("shake");
+  } else if (userEmail.value == "") {
+    userEmail.classList.add("shake");
+  } else if (userSubject.value == "") {
+    userSubject.classList.add("shake");
+  } else if (userMessage.value == "") {
+    userMessage.classList.add("shake");
   }
+  setTimeout(() => {
+    userEmail.classList.remove("shake");
+    userMessage.classList.remove("shake");
+    userName.classList.remove("shake");
+    userSubject.classList.remove("shake");
+  }, 500);
 };
-
-setTimeout(() => {
-  userEmail.classList.remove("shake");
-  userMessage.classList.remove("shake");
-  userName.classList.remove("shake");
-  userSubject.classList.remove("shake");
-}, 500);
