@@ -206,6 +206,7 @@ header {
   line-height: 34px;
   color: var(--green);
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .section-container {
@@ -342,6 +343,22 @@ header {
   background-color: rgba(30, 30, 30, .65);
 }
 
+.skill-container.cyan {
+  background-color: rgba(97, 219, 251, .65);
+}
+
+.skill-container.cyan img {
+  width: 50%;
+}
+
+.skill-container.purple {
+  background-color: rgba(118, 74, 188, .65);
+}
+
+.skill-container.purple img {
+  width: 50%;
+}
+
 .skill-progress {
   font-size: 20px;
   font-weight: 700;
@@ -365,9 +382,6 @@ header {
   margin-left: 150px;
 }
 
-.timeline-container {
-}
-
 .timelines {
   display: flex;
   flex-direction: column;
@@ -380,6 +394,10 @@ header {
   align-items: flex-end;
   width: 95%;
   margin-bottom: 45px;
+}
+
+.timeline.margined {
+  margin: 40px 0;
 }
 
 .circle-container {
