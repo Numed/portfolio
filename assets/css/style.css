@@ -347,12 +347,20 @@ header {
   background-color: rgba(118, 74, 188, .65);
 }
 
-.skill-container.purple img {
+.skill-container.cyan {
+  background-color: rgba(97, 219, 251, .65);
+}
+
+.skill-container.light-blue {
+  background-color: rgba(49, 120, 198, .65);
+}
+
+.skill-container.light-blue img {
   width: 50%;
 }
 
-.skill-container.cyan {
-  background-color: rgba(97, 219, 251, .65);
+.skill-container.purple img {
+  width: 50%;
 }
 
 .skill-container.cyan img {
